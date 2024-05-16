@@ -19,9 +19,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Libre+Barcode+39+Extended+Text&family=Rubik+Scribble&display=swap"
         rel="stylesheet">
+    <script src="script.js" type="module"></script>
 </head>
 
-<body onscroll="teste()">
+<body>
     <div class="div_navbar" id="div_navbar">
         <div id="div_logo" class="div_logo">
             <img src="img/logo-aneurisma.png" alt="">
@@ -38,43 +39,11 @@
             </li>
             |
             <li>
-                <a href="login.html">Login</a>
+                <a href="">Login</a>
             </li>
             <li>
                 <a href="">Cadastro</a>
             </li>
         </div>
     </div>
-
-    <div class="div_tela" id="div_tela">
-        <div class="div_titulo" id="div_titulo">
-            NOISECON
-            <div class="div_button" id="div_button">
-                <button>LOGIN</button>
-                <button>CADASTRO</button>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-    <div class="div_descer" id="div_descer">
-    </div>
-
 </body>
-
-
-<!-- <script>
-
-    function teste() {
-        var navbar = document.getElementById('div_navbar')
-        console.log('navbar', navbar);
-        if (window.scrollY >= 640) {
-            navbar.classList.add('fixa');
-        } else {
-            navbar.classList.add('div_navbar');;
-        }
-    }
-</script> -->
