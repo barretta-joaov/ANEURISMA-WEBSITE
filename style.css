@@ -72,13 +72,13 @@ li {
     justify-content: center;
     height: 100vh;
     background-color: rgb(0, 0, 0, 0.65);
-    border-bottom: 5px solid rgb(206, 0, 154);
+    border-bottom: 5px solid rgb(255, 0, 0);
 }
 
 .div_fundo {
     height: 100%;
     width: 100%;
-    background-color:rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,7 +145,6 @@ li {
     justify-content: center;
     align-items: start;
     background-image: url(img/background_5.gif);
-
     background-repeat: no-repeat;
     background-size: cover;
     width: 105vh;
@@ -181,4 +180,79 @@ li {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     margin-left: 10px;
     margin-right: 5px;
+}
+
+.fundo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+.banner-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50vh;
+    height: 50%;
+    border: solid rgb(255, 0, 0) 5px;
+    flex-direction: column;
+    border-radius: 10px;
+    border-style: double;
+    color: red;
+    font-size: 25px;
+}
+
+.banner-login input {
+    width: auto;
+    height: 30px;
+    border-radius: 0px;
+    border: solid 2px red;
+    border-style: dashed;
+    font-size: 15px;
+}
+
+.banner-login button{
+    margin-top: 20px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: 0px;
+    background-color: red;
+    color: WHITE;
+    font-family: "Dela Gothic One", sans-serif;
+    cursor:pointer;
+}
+
+.banner-login button:hover{
+    background-color: rgb(0, 255, 0);
+    transition-duration: 0.5s;
+}
+
+
+.banner-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+.banner-login .titulo_banner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    font-family: "Rubik Iso", system-ui;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    margin-top: 0px;
 }
