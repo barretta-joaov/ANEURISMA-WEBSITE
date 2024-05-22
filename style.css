@@ -9,8 +9,8 @@ body {
 
 
 .div_logo img {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     margin: 10px;
     margin-top: 25px;
 }
@@ -255,4 +255,76 @@ li {
     color: rgb(255, 255, 255);
     font-size: 40px;
     margin-top: 0px;
+}
+/* asdasdadsdasa */
+.banner-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50vh;
+    height: 60%;
+    border: solid rgb(255, 0, 0) 5px;
+    flex-direction: column;
+    border-radius: 10px;
+    border-style: double;
+    color: red;
+    font-size: 25px;
+}
+
+.banner-registro input {
+    width: auto;
+    height: 30px;
+    border-radius: 0px;
+    border: solid 2px red;
+    border-style: dashed;
+    font-size: 15px;
+}
+
+.banner-registro button{
+    margin-top: 20px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: 0px;
+    background-color: red;
+    color: WHITE;
+    font-family: "Dela Gothic One", sans-serif;
+    cursor:pointer;
+}
+
+.banner-registro button:hover{
+    background-color: rgb(0, 255, 0);
+    transition-duration: 0.5s;
+}
+
+
+.banner-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+.banner-registro .titulo_banner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    font-family: "Rubik Iso", system-ui;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+.registro-input{
+    display: flex;
+    justify-content: center;
+    flex-direction: inherit;
+    align-items: center;
+
 }
