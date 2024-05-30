@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(img/background_3.gif);
+    background-image: url(../assets/img/background_3.gif);
     background-repeat: no-repeat;
     background-size: contain;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -144,13 +144,13 @@ li {
     display: flex;
     justify-content: center;
     align-items: start;
-    background-image: url(img/background_5.gif);
+    background-image: url(../assets/img/background_5.gif);
     background-repeat: no-repeat;
     background-size: cover;
     width: 105vh;
     height: 80vh;
     margin: 90px;
-    border: solid rgb(0, 255, 0) 5px;
+    border: solid rgb(255, 0, 0) 5px;
     flex-direction: column;
     border-radius: 10px;
     border-style: double;
@@ -256,16 +256,15 @@ li {
     font-size: 40px;
     margin-top: 0px;
 }
-/* asdasdadsdasa */
+
+
 .banner-registro {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 50vh;
-    height: 60%;
+    height: 70vh;
     border: solid rgb(255, 0, 0) 5px;
     flex-direction: column;
     border-radius: 10px;
@@ -317,7 +316,7 @@ li {
     justify-content: center;
     font-family: "Rubik Iso", system-ui;
     color: rgb(255, 255, 255);
-    font-size: 40px;
+    font-size: 120%;
     margin-top: 0px;
 }
 

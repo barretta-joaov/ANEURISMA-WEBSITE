@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noisecon | Cadastro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Libre+Barcode+39+Extended+Text&family=Rubik+Iso&family=Rubik+Scribble&family=Sixtyfour&display=swap"
+        rel="stylesheet">
+    <script src="../public/js/sessao.js" type="text/javascript" X-Content-Type-Options: nosniff></script>
+    
+</head>
+
+<body>
+    <div class="div_navbar" id="div_navbar">
+        <div id="div_logo" class="div_logo">
+            <img src="assets/img/3dgifmaker13012.gif" alt="">
+        </div>
+        <div id="div_botoes" class="div_botoes">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="">Noticias</a>
+            </li>
+            <li>
+                <a href="">Fórum</a>
+            </li>
+            |
+            <li>
+                <a href="login.html">Login</a>
+            </li>
+            <li>
+                <a href="registro.html">Cadastro</a>
+            </li>
+        </div>
+    </div>
+
+    <div class="fundo" id="div_descer">
+        <div class="banner-registro">
+            <div class="titulo_banner">
+                Olá, cadastre-se!
+            </div>
+            <div class="registro-input">
+                <div class="banner-input">
+                    Usuário:<input id="input_nomeUsuario" type="text" placeholder="Insira seu usuário aqui">
+                </div>
+                <div class="banner-input">
+                    E-mail:<input id="input_email" type="text" placeholder="Insira seu e-mail aqui" id="input_email">
+                </div>
+                <div class="banner-input">
+                    Senha:<input id="input_senha" type="password" placeholder="Insira sua senha aqui" id="input_Senha">
+                </div>
+                <div class="banner-input">
+                    Confirmar senha:<input id="input_confirmarSenha" type="password" placeholder="Confirme sua senha">
+                </div>
+            </div>
+            <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+
+    </div>
+    <div id="div_aguardar">
+
+    </div>
+</body>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = input_nomeUsuario.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var confirmacaoSenhaVar = input_confirmarSenha.value;
+        //   var empresaVar = listaEmpresas.value
+        if (
+            nomeVar == "" ||
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == ""
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000);
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
+
+                    mensagem_erro.innerHTML =
+                        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000");
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+    }
+
+    function validarSessao() {
+    var email = sessionStorage.EMAIL_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+
+    var b_usuario = document.getElementById("b_usuario");
+
+    if (email != null && nome != null) {
+        b_usuario.innerHTML = nome;
+    } else {
+        window.location = "../login.html";
+    }
+}
+
+function limparSessao() {
+    sessionStorage.clear();
+    window.location = "../login.html";
+}
+
+// carregamento (loading)
+function aguardar() {
+    var divAguardar = document.getElementById("div_aguardar");
+    divAguardar.style.display = "flex";
+}
+
+function finalizarAguardar(texto) {
+    var divAguardar = document.getElementById("div_aguardar");
+    divAguardar.style.display = "none";
+
+    var divErrosLogin = document.getElementById("div_erros_login");
+    if (texto) {
+        divErrosLogin.style.display = "flex";
+        divErrosLogin.innerHTML = texto;
+    }
+}
+</script>
